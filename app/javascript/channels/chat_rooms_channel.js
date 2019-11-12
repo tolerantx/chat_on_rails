@@ -3,11 +3,20 @@ import consumer from "./consumer"
 jQuery(document).on('turbolinks:load', function() {
   var messages = $('#messages')
 
-  if ($('#messages').length > 0) {
+  if ($('#messages .media').length > 0) {
     function messages_to_bottom() {
-      messages.scrollTop(messages.prop('scrollHeight'))
+      var scroller = messages.parent();
+      scroller.scrollTop(scroller.prop('scrollHeight'));
     }
-    messages_to_bottom();
+
+    var setScroller = setInterval(function() {
+      messages_to_bottom()
+      document.getElementById('message_body').focus();
+
+      if (setScroller) {
+       window.clearInterval(setScroller);
+      }
+    }, 1000);
 
     consumer.global_chat = consumer.subscriptions.create(
       {
@@ -43,5 +52,6 @@ jQuery(document).on('turbolinks:load', function() {
       }
       return false
     })
+
   }
 })
