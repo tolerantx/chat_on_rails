@@ -1,3 +1,4 @@
+$font-family-base: 'Roboto', sans-serif;
 @import '~bootstrap/scss/_functions.scss';
 @import '~bootstrap/scss/_variables.scss';
 @import '~bootstrap/scss/_mixins.scss';
@@ -36,41 +37,4 @@
 @import '~bootstrap/scss/_tooltip.scss';
 @import '~bootstrap/scss/_transitions.scss';
 @import '~bootstrap/scss/_utilities.scss';
-
-
-body, html {
-  margin: 0;
-  height: 100%;
-}
-body{
-  overflow: hidden;
-}
-
-.container-fluid, .parent{
-  height: 100%;
-  padding-bottom: 5em;
-}
-
-#scroller {
-  position: relative;
-  float: left;
-  text-align: left;
-  height:100%;
-  overflow-y: auto;
-  width: 100%;
-}
-
-#message_body {
-  min-width: 100%;
-  margin-right: .5rem;
-}
-
-.fixed-bottom {
-  padding: 0 .5em;
-}
-
-#messages {
-  h5 {
-    font-size: 0.75rem;
-  }
-}
+@import './chat_rooms.scss';

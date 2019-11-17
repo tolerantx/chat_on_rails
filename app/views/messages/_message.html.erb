@@ -1,11 +1,12 @@
-<div class='media'>
+<div class='media mt-2 mb-2'>
   <%= gravatar_for message.user, class: 'mr-3' %>
   <div class='media-body'>
     <h5 class='mt-0'>
-      <%= message.user.name %>
-      -
+      <%= "#{message.user.name}," %>
       <%= l(message.created_at, format: :short) %>
     </h5>
-    <%= message.body %>
+    <div class='message p-2'>
+      <%= message.body %>
+    </div>
   </div>
 </div>
